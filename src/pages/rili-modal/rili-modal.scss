@@ -1,0 +1,75 @@
+page-rili-modal {
+
+  .calendar {
+    margin-top: 20vh;
+    margin-top: -webkit-calc((100vh - 100% - 24px) / 2);
+    margin-top: -moz-calc((100vh - 100% - 24px) / 2);
+    margin-top: calc((100vh - 100% - 24px) / 2);
+
+    .week-bar {
+
+      -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25px);
+      -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25px);
+      box-shadow: 0 0px 5px rgba(0, 0, 0, 0.25px);
+
+      font-size: 1rem;
+
+      padding: 1rem 0;
+
+    }
+
+    ion-badge.select-date:before {
+      content: "";
+    }
+
+    ion-badge.select-date {
+      font-weight: normal;
+      padding: 0;
+      font-size: 1.4rem;
+      line-height: 1.4rem;
+      padding: 0.9rem 0;
+      height: 3.2rem;
+      width: 3.2rem;
+      text-align: center;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      position: relative;
+    }
+
+    ion-badge.transparent {
+      background-color: transparent;
+    }
+
+    ion-badge.opacity {
+      -webkit-opacity: 0.55;
+      -moz-opacity: 0.55;
+      -o-opacity: 0.55;
+      opacity: 0.55;
+    }
+
+    ion-badge.box-show {
+      box-shadow: 0 0 1rem rgba(56, 127, 245, 0.8);
+    }
+
+  }
+
+  .date-mark {
+    position: absolute;
+    top: -.3rem;
+    right: -.3rem;
+    font-size: .8rem;
+    animation: cycleScaleKeyframes 1s linear infinite alternate;
+  }
+
+  @keyframes cycleScaleKeyframes {
+    0% {
+      transform: scale(1);
+    }
+
+    100% {
+      transform: scale(0.5);
+    }
+  }
+
+}

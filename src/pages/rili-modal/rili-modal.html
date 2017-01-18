@@ -1,0 +1,97 @@
+<ion-content style="background-color: rgba(0,0,0,0.4)">
+
+    <ion-card class="calendar">
+        <!--header-->
+        <ion-item [color]="theme">
+            <h2 text-bold ion-text color="light">{{currentDate}} {{currentWeek}}</h2>
+            <button (click)="close($event,null);" ion-button item-right clear icon-only color="light">
+                <ion-icon name="md-close"></ion-icon>
+            </button>
+        </ion-item>
+
+        <!--selecter-->
+        <ion-grid no-padding>
+            <ion-row>
+                <ion-col width-50 no-padding>
+                    <ion-item [color]="theme">
+                        <button ion-button item-left clear icon-only color="light" (click)="YEAR_SLIDES.slidePrev()">
+                            <ion-icon name="arrow-back"></ion-icon>
+                        </button>
+
+                        <ion-slides #YEAR_SLIDES
+                                    (ionSlideNextStart)="_yearSlideNextStart($event)"
+                                    (ionSlidePrevStart)="_yearSlidePrevStart($event)">
+                            <ion-slide *ngFor="let _yearItem of _yearList">
+                                <h2 text-bold text-center ion-text color="light">
+                                    {{_yearItem}}
+                                </h2>
+                            </ion-slide>
+                        </ion-slides>
+
+                        <button ion-button item-right clear icon-only color="light" (click)="YEAR_SLIDES.slideNext()">
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </ion-item>
+                </ion-col>
+                <ion-col width-50 no-padding>
+                    <ion-item [color]="theme">
+                        <button ion-button item-left clear icon-only color="light" (click)="MONTH_SLIDES.slidePrev()">
+                            <ion-icon name="arrow-back"></ion-icon>
+                        </button>
+                        <ion-slides #MONTH_SLIDES loop="true"
+                                    (ionSlideNextStart)="_monthSlideNextStart($event)"
+                                    (ionSlidePrevStart)="_monthSlidePrevStart($event)">
+                            <ion-slide *ngFor="let _monthItem of _monthList">
+                                <h2 text-bold text-center ion-text color="light">
+                                    {{_monthItem}}
+                                </h2>
+                            </ion-slide>
+                        </ion-slides>
+
+                        <button ion-button item-right clear icon-only color="light" (click)="MONTH_SLIDES.slideNext()">
+                            <ion-icon name="arrow-forward"></ion-icon>
+                        </button>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+
+
+        <!--calendar-->
+
+        <ion-grid style="background-color: #fff;" no-padding>
+
+            <!-- week -->
+            <ion-row class="week-bar">
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期日</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期一</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期二</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期三</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期四</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期五</ion-col>
+                <ion-col center no-padding text-center style="font-size: 1rem;">星期六</ion-col>
+            </ion-row>
+            <!-- days -->
+            <div padding-vertical>
+
+                <ion-row *ngFor="let _dayItem of _dayList">
+
+                    <ion-col text-center *ngFor="let _day of _dayItem" tappable (click)="close($event,_day?.fullDate)">
+                        <ion-badge [ngClass]="{opacity: !_day?.primary,'box-show':_day?.mark}" class="select-date"
+                                   [color]="_day?.fullDate==currentDate?theme:'light'">
+                            {{_day?.date}}
+                            <span ion-text [color]="markTheme" *ngIf="_day?.mark"
+                                  class="icon icon-ios icon-ios-primary ion-ios-radio-button-on date-mark"></span>
+                        </ion-badge>
+                    </ion-col>
+
+                </ion-row>
+
+            </div>
+
+        </ion-grid>
+
+
+    </ion-card>
+
+</ion-content>

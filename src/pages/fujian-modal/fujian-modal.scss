@@ -1,0 +1,52 @@
+page-fujian-modal {
+  .image-container {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+
+    overflow: hidden;
+
+    .image-background {
+      position: absolute;
+
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+
+      background-position: center center;
+
+      background-color: #efefef;
+    }
+
+    .image-delete-button {
+      position: absolute;
+      right: -10px;
+      top: -8px;
+
+      -webkit-opacity: .8;
+      -moz-opacity: .8;
+      -o-opacity: .8;
+      opacity: .8;
+
+      &.activated {
+
+        -webkit-opacity: .6;
+        -moz-opacity: .6;
+        -o-opacity: .6;
+        opacity: .6;
+
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        transform: scale(1.1);
+      }
+    }
+  }
+}

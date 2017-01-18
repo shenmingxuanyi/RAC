@@ -1,0 +1,62 @@
+<!--
+  Generated template for the FujianModal page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>附件</ion-title>
+        <ion-buttons right>
+            <button clear ion-button (click)="close($event)">完成</button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+
+    <ion-grid>
+
+        <div *ngFor="let item of list;let i=index;">
+            <ion-row *ngIf="i%3==0">
+                <ion-col>
+                    <div class="image-container">
+                        <div class="image-background" style="background-image: url('./assets/image/image1.jpg');">
+                        </div>
+                        <button clear ion-button icon-only class="image-delete-button">
+                            <ion-icon color="dark" name="ios-close-circle"
+                                      style="text-shadow: 0 0 .5rem rgba(255,255,255,.75);"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="image-container">
+                        <div class="image-background" style="background-image: url('./assets/image/image1.jpg');">
+                        </div>
+                        <button clear ion-button icon-only class="image-delete-button">
+                            <ion-icon color="dark" name="ios-close-circle"
+                                      style="text-shadow: 0 0 .5rem rgba(255,255,255,.75);"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+                <ion-col>
+                    <div class="image-container">
+                        <div class="image-background" style="background-image: url('./assets/image/image1.jpg');">
+                        </div>
+                        <button clear ion-button icon-only class="image-delete-button">
+                            <ion-icon color="dark" name="ios-close-circle"
+                                      style="text-shadow: 0 0 .5rem rgba(255,255,255,.75);"></ion-icon>
+                        </button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </div>
+
+    </ion-grid>
+
+</ion-content>
+
