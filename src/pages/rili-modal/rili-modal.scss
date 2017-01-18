@@ -18,18 +18,14 @@ page-rili-modal {
 
     }
 
-    ion-badge.select-date:before {
-      content: "";
-    }
-
     ion-badge.select-date {
       font-weight: normal;
       padding: 0;
       font-size: 1.4rem;
       line-height: 1.4rem;
-      padding: 0.9rem 0;
-      height: 3.2rem;
-      width: 3.2rem;
+      padding: 1rem 0;
+      height: 3.4rem;
+      width: 3.4rem;
       text-align: center;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;

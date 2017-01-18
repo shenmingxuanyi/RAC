@@ -14,6 +14,8 @@ export class HomePage {
 
     date: string = "2017-01-09";
 
+    data: any = {};
+
     constructor(public navCtrl: NavController, public modalController: ModalController) {
 
     }
@@ -38,7 +40,9 @@ export class HomePage {
         if (cordova && cordova['plugins'] && cordova['plugins']['SSCLocation'] && cordova["plugins"]['SSCLocation']['start']) {
             cordova['plugins']['SSCLocation']['start']((data) => {
                 console.log(data);
+                this.data = data;
             }, (error) => {
+                this.data = error;
                 console.log(error);
             })
         }

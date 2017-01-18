@@ -47,6 +47,10 @@ export class RiliModalPage implements OnInit {
         this.currentDate = this.navParams.get("currentDate") || this.minDate;
 
         this.markDateList = this.navParams.get("markDateList") || [];
+
+        this._yearList = this.initYear(this.minDate.split("-")[0], this.maxDate.split("-")[0]);
+        this._monthList = this.initMonth("1", "12");
+
     }
 
     ionViewDidLoad() {
@@ -58,10 +62,8 @@ export class RiliModalPage implements OnInit {
     };
 
     ngOnInit() {
-        this._yearList = this.initYear(this.minDate.split("-")[0], this.maxDate.split("-")[0]);
-        this._monthList = this.initMonth("1", "12");
-    }
 
+    }
 
     private initYear(startYear: string, endYear: string) {
 
