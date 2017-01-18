@@ -189,7 +189,7 @@ export class RiliModalPage implements OnInit {
                     year: date.getFullYear() + "",
                     month: ("0" + (date.getMonth() + 1)).slice(-2),
                     primary: false,
-                    fullDate: date.getFullYear() + "" + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + i).slice(-2)
+                    fullDate: date.getFullYear() + "" + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2)
                 };
 
                 dateList[0][date.getDay()]['mark'] = this.markDateList.findIndex(item => item == dateList[0][date.getDay()].fullDate) > -1 ? true : false;
@@ -216,7 +216,7 @@ export class RiliModalPage implements OnInit {
                     year: date.getFullYear() + "",
                     month: ("0" + (date.getMonth() + 1)).slice(-2),
                     primary: false,
-                    fullDate: date.getFullYear() + "" + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + i).slice(-2)
+                    fullDate: date.getFullYear() + "" + "-" + ("0" + (date.getMonth() + 1)).slice(-2) + "-" + ("0" + date.getDate()).slice(-2)
                 };
 
                 dateList[dateList.length - 1][date.getDay()]['mark'] = this.markDateList.findIndex(item => item == dateList[dateList.length - 1][date.getDay()].fullDate) > -1 ? true : false;
